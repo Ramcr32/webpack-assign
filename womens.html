@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      #navbar{
+            display: flex;
+            justify-content: space-around;
+            background-color: burlywood;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            color: white;
+            padding: 10px;
+            text-transform: capitalize;
+            margin: 10px;
+        }
+        a {
+        text-decoration: none;
+      }
+      #navbar a:hover {
+        color: white;
+      }
+      #navbar a {
+        cursor: pointer;
+        color: cornflowerblue;
+      }
+
+      @media all and (min-width: 80px) and (max-width: 400px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+
+
+    </div>
+    <button><a href="cart.html">Go to Cart</a></button>
+    <select id="sortNames" onchange="handleNameSort()">
+      <option value="">Sort By Names</option>
+      <option value="ascending">Ascending</option>
+      <option value="descending">Descending</option>
+    </select>
+
+    <select id="sortSalary" onchange="handleSalarySort()">
+      <option value="">Sort By Salary</option>
+      <option value="htl">High to Low</option>
+      <option value="lth">Low to High</option>
+    </select>
+
+    <select id="filterRole" onchange="handleRoleFilter()">
+      <option value="">Filter by Role</option>
+      <option value="FSD">FSD</option>
+      <option value="Frontend">Frontend</option>
+      <option value="Backend">Backend</option>
+    </select>
+
+    <div id="container"></div>
+
+  </body>
+</html>
+
+<script src="./src/womens.js" type="module">
+
+</script>
